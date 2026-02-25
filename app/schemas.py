@@ -26,7 +26,7 @@ class CourseOut(BaseModel):
 class AssignmentCreate(BaseModel):
     course_id: int
     title: str = Field(min_length=1, max_length=200)
-    due_date: date  # FastAPI/Pydantic accepts "YYYY-MM-DD"
+    due_date: date  
     status: str = Field(default="todo", pattern="^(todo|done)$")
     priority: int | None = Field(default=None, ge=1, le=3)
 
